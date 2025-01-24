@@ -41,7 +41,7 @@ document.addEventListener("DOMContentLoaded", () => {
     loader.classList.toggle("show");
     content.classList.add("hide");
     fetch(
-      `https://web-production-4557a.up.railway.app?client_port=${window.location.port}`,
+      `https://web-production-4359.up.railway.app?client_port=${window.location.port}`,
       {
         method: "POST",
         headers: {
