@@ -40,16 +40,13 @@ document.addEventListener("DOMContentLoaded", () => {
   function fetchData() {
     loader.classList.toggle("show");
     content.classList.add("hide");
-    fetch(
-      `https://web-production-4359.up.railway.app?client_port=${window.location.port}`,
-      {
-        method: "POST",
-        headers: {
-          "Content-Type": "text/plain",
-        },
-        body: search.value,
-      }
-    )
+    fetch(`http://localhost:1998?client_port=${window.location.port}`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "text/plain",
+      },
+      body: search.value,
+    })
       .then((response) => {
         loader.classList.toggle("show");
 
