@@ -23,6 +23,10 @@ document.addEventListener("DOMContentLoaded", () => {
   const regionState = document.querySelector(".region_state");
   const cloud = document.querySelector(".cloud");
   const country = document.querySelector(".country");
+  const clientId =
+    localStorage.get("clientId") || Math.random().toString(36).slice(2, 6);
+  console.log(clientId);
+  localStorage.setItem("clientId", clientId);
   btn.addEventListener("click", fetchData);
   btn.click();
 
@@ -40,12 +44,12 @@ document.addEventListener("DOMContentLoaded", () => {
   function fetchData() {
     loader.classList.toggle("show");
     content.classList.add("hide");
-    fetch(`http://localhost:1998?client_port=${window.location.port}`, {
+    fetch("http://localhost:1998?", {
       method: "POST",
       headers: {
         "Content-Type": "text/plain",
       },
-      body: search.value,
+      body: JSON.stringify({ clientId: clientId, search: search.value }),
     })
       .then((response) => {
         loader.classList.toggle("show");
