@@ -47,7 +47,7 @@ document.addEventListener("DOMContentLoaded", () => {
     fetch("http://localhost:1998?", {
       method: "POST",
       headers: {
-        "Content-Type": "text/plain",
+        "Content-Type": "application/json",
       },
       body: JSON.stringify({ clientId: clientId, search: search.value }),
     })
