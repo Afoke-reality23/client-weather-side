@@ -57,6 +57,8 @@ document.addEventListener("DOMContentLoaded", () => {
         if (response.ok) {
           if (response.headers.get("Content-Type") === "application/json") {
             return response.json();
+          } else if (response.status === 204) {
+            return;
           } else {
             return response.text();
           }
