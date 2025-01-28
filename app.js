@@ -24,7 +24,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const cloud = document.querySelector(".cloud");
   const country = document.querySelector(".country");
   const clientId =
-    localStorage.get("clientId") || Math.random().toString(36).slice(2, 6);
+    localStorage.getItem("clientId") || Math.random().toString(36).slice(2, 6);
   console.log(clientId);
   localStorage.setItem("clientId", clientId);
   btn.addEventListener("click", fetchData);
