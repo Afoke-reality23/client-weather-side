@@ -44,7 +44,7 @@ document.addEventListener("DOMContentLoaded", () => {
   function fetchData() {
     loader.classList.toggle("show");
     content.classList.add("hide");
-    fetch("http://localhost:1998?", {
+    fetch("https://web-production-d35f1.up.railway.app?", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
