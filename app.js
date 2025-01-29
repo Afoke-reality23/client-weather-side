@@ -44,7 +44,7 @@ document.addEventListener("DOMContentLoaded", () => {
   function fetchData() {
     loader.classList.toggle("show");
     content.classList.add("hide");
-    fetch("https://web-production-d35f1.up.railway.app?", {
+    fetch("https://web-production-be709.up.railway.app", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
