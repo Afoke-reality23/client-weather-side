@@ -44,7 +44,11 @@ document.addEventListener("DOMContentLoaded", () => {
   function fetchData() {
     loader.classList.toggle("show");
     content.classList.add("hide");
+<<<<<<< HEAD
     fetch("https://web-production-be709.up.railway.app", {
+=======
+    fetch("https://server.com", {
+>>>>>>> 5200074 (corrected forecaste_response spelliing)
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -66,11 +70,11 @@ document.addEventListener("DOMContentLoaded", () => {
       })
       .then((data) => {
         console.log(data);
-        let hourlyForecastData = data.forecaste_response.forecast.forecastday;
+        let hourlyForecastData = data.forecast_response.forecast.forecastday;
         let weather = data.current_response.current;
         let location = data.current_response.location;
-        let lat = data.forecaste_response.location.lat;
-        let lon = data.forecaste_response.location.lon;
+        let lat = data.forecast_response.location.lat;
+        let lon = data.forecast_response.location.lon;
         setCordinates(lat, lon);
         setWeatherAndCityName(weather, location);
         populateAirCondition(weather);
