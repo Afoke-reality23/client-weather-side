@@ -27,7 +27,7 @@ document.addEventListener("DOMContentLoaded", () => {
     localStorage.getItem("clientId") || Math.random().toString(36).slice(2, 6);
     console.log(clientId);
     localStorage.setItem("clientId", clientId);
-    btn.addEventListener("click", fetchData);
+    btn.addEventListener("click", ()=>{fetchData(clientId,search.value)});
     btn.click();
 
     let map = L.map("map", {
@@ -41,7 +41,8 @@ document.addEventListener("DOMContentLoaded", () => {
         defaultMarkGeocode: true,
     }).addTo(map);
 
-    function fetchData() {
+    function fetchData(cliendIdNum,value) {
+        print(cliendIdNum,value)
         loader.classList.toggle("show");
         content.classList.add("hide");
         fetch("https://web-production-be709.up.railway.app", {
@@ -50,7 +51,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 "Content-Type": "application/json",
             },
             body: JSON.stringify({
-                clientId: clientId, search: search.value
+                clientId: cliendIdNum, search:value
             }),
         })
         .then((response) => {
