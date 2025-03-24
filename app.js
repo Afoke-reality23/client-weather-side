@@ -47,7 +47,7 @@ document.addEventListener("DOMContentLoaded", () => {
     //console.log(cliendIdNum,value)
     loader.classList.toggle("show");
     content.classList.add("hide");
-    fetch("https://server-022o.onrender.com", {
+    fetch("https://server-1e7h.onrender.com", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
