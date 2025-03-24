@@ -1,5 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
-  const message = document.getElementById("message");
+  const city = document.getElementById("city");
+  const mesg = document.querySelector(".mesg");
   const btn = document.querySelector(".btn");
   // const day = document.querySelector(".day");
   // const date = document.querySelector(".date");
@@ -23,10 +24,10 @@ document.addEventListener("DOMContentLoaded", () => {
   // const regionState = document.querySelector(".region_state");
   // const cloud = document.querySelector(".cloud");
   // const country = document.querySelector(".country");
-  // const clientId =
-  //   localStorage.getItem("clientId") || Math.random().toString(36).slice(2, 6);
-  // console.log(clientId);
-  // localStorage.setItem("clientId", clientId);
+  const clientId =
+    localStorage.getItem("clientId") || Math.random().toString(36).slice(2, 6);
+  console.log(clientId);
+  localStorage.setItem("clientId", clientId);
   btn.addEventListener("click", fetchData);
   btn.click();
 
@@ -42,7 +43,7 @@ document.addEventListener("DOMContentLoaded", () => {
   // }).addTo(map);
 
   function fetchData() {
-    text = message.value;
+    text = city.value;
     // loader.classList.toggle("show");
     // content.classList.add("hide");
     fetch("https://server-m5vy.onrender.com", {
@@ -51,7 +52,8 @@ document.addEventListener("DOMContentLoaded", () => {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        message: text,
+        city: text,
+        clientId: clientId,
       }),
     })
       .then((response) => {
@@ -69,6 +71,7 @@ document.addEventListener("DOMContentLoaded", () => {
       })
       .then((data) => {
         console.log(data);
+        mesg.textContent = data;
         // let hourlyForecastData = data.forecast_response.forecast.forecastday;
         // let weather = data.current_response.current;
         // let location = data.current_response.location;
@@ -79,7 +82,7 @@ document.addEventListener("DOMContentLoaded", () => {
         // populateAirCondition(weather);
         // createHourlyDiv(hourlyForecastData);
         // content.classList.remove("hide");
-        message.value = "";
+        city.value = "";
         console.log(text);
       })
       .catch((error) => {
