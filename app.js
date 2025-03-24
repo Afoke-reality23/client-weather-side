@@ -46,16 +46,20 @@ document.addEventListener("DOMContentLoaded", () => {
     text = city.value;
     // loader.classList.toggle("show");
     // content.classList.add("hide");
-    fetch("https://server-m5vy.onrender.com", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        city: text,
-        clientId: clientId,
-      }),
-    })
+    fetch(
+      //"https://server-m5vy.onrender.com",
+      "http://localhost:1998",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          city: text,
+          clientId: clientId,
+        }),
+      }
+    )
       .then((response) => {
         // loader.classList.toggle("show");
 
