@@ -27,6 +27,8 @@ document.addEventListener("DOMContentLoaded", () => {
   const clientId =
     localStorage.getItem("clientId") || Math.random().toString(36).slice(2, 6);
   console.log(clientId);
+  const myname = "afoke";
+  console.log(typeof myname, typeof clientId);
   localStorage.setItem("clientId", clientId);
   btn.addEventListener("click", fetchData);
   btn.click();
@@ -47,8 +49,8 @@ document.addEventListener("DOMContentLoaded", () => {
     // loader.classList.toggle("show");
     // content.classList.add("hide");
     fetch(
-      "https://server-m5vy.onrender.com",
-      //"http://localhost:1998",
+      //"https://server-m5vy.onrender.com",
+      "http://localhost:1998",
       {
         method: "POST",
         headers: {
