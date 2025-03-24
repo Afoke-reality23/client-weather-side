@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
-  const message = document.getElementById("#message");
+  const message = document.getElementById("message");
   const btn = document.querySelector(".btn");
   // const day = document.querySelector(".day");
   // const date = document.querySelector(".date");
@@ -27,9 +27,7 @@ document.addEventListener("DOMContentLoaded", () => {
   //   localStorage.getItem("clientId") || Math.random().toString(36).slice(2, 6);
   // console.log(clientId);
   // localStorage.setItem("clientId", clientId);
-  // btn.addEventListener("click", () => {
-  //   fetchData(clientId, message.value);
-  // });
+  btn.addEventListener("click", fetchData);
   btn.click();
 
   // let map = L.map("map", {
@@ -47,7 +45,7 @@ document.addEventListener("DOMContentLoaded", () => {
     text = message.value;
     // loader.classList.toggle("show");
     // content.classList.add("hide");
-    fetch("http://localhost:1998", {
+    fetch("https://server-m5vy.onrender.com", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -57,7 +55,7 @@ document.addEventListener("DOMContentLoaded", () => {
       }),
     })
       .then((response) => {
-        loader.classList.toggle("show");
+        // loader.classList.toggle("show");
 
         if (response.ok) {
           if (response.headers.get("Content-Type") === "application/json") {
