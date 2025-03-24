@@ -47,8 +47,8 @@ document.addEventListener("DOMContentLoaded", () => {
     // loader.classList.toggle("show");
     // content.classList.add("hide");
     fetch(
-      //"https://server-m5vy.onrender.com",
-      "http://localhost:1998",
+      "https://server-m5vy.onrender.com",
+      //"http://localhost:1998",
       {
         method: "POST",
         headers: {
