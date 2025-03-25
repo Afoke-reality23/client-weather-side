@@ -24,10 +24,10 @@ document.addEventListener("DOMContentLoaded", () => {
   // const regionState = document.querySelector(".region_state");
   // const cloud = document.querySelector(".cloud");
   // const country = document.querySelector(".country");
-  //const clientId =
-  //localStorage.getItem("clientId") || Math.random().toString(36).slice(2, 6);
-  //console.log(clientId);
-  //localStorage.setItem("clientId", clientId);
+  const clientId =
+    localStorage.getItem("clientId") || Math.random().toString(36).slice(2, 6);
+  // console.log(clientId);
+  localStorage.setItem("clientId", clientId);
   btn.addEventListener("click", fetchData);
   btn.click();
 
@@ -55,6 +55,7 @@ document.addEventListener("DOMContentLoaded", () => {
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
+          clientId: clientId,
           city: text,
         }),
       }
