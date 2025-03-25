@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
   const city = document.getElementById("city");
-  const btn = document.querySelector(".btn");
+  const btn = document.getElementById("btn");
   const day = document.querySelector(".day");
   const date = document.querySelector(".date");
   const time = document.querySelector(".time");
