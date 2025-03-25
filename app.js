@@ -44,7 +44,7 @@ document.addEventListener("DOMContentLoaded", () => {
     cityName = city.value;
     loader.classList.toggle("show");
     content.classList.add("hide");
-    fetch("https://renserver-production.up.railway.app", {
+    fetch("https://server-production-4731.up.railway.app", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
